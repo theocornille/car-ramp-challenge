@@ -5,6 +5,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.datasets import make_regression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.linear_model import LinearRegression
+from sklearn.linear_model import Ridge, RidgeCV, ElasticNet, Lasso, LassoCV, LassoLarsCV
 
 
 class Regressor(BaseEstimator):
@@ -17,4 +18,4 @@ class Regressor(BaseEstimator):
 
 
     def predict(self, X):
-        return self.reg.predict(X)[:, np.newaxis]  # pour le passer en (machin, 1 ) mais ça change rien
+        return self.reg.predict(X)[:, np.newaxis]  #(:, 1)
